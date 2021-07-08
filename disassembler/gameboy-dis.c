@@ -195,7 +195,7 @@ void printInstruction(uint8_t *currInstruc, int *pc) {
 					*pc += 2;
 					break;
 				case 0x1:
-					printf("%s (0x%02x) \t %02x", "LD HL,d16", currInstruc[0], currInstruc[2], currInstruc[1]);
+					printf("%s (0x%02x) \t %02x%02x", "LD HL,d16", currInstruc[0], currInstruc[2], currInstruc[1]);
 					*pc += 3;
 					break;
 				case 0x2:
@@ -267,7 +267,7 @@ void printInstruction(uint8_t *currInstruc, int *pc) {
 					*pc += 2;
 					break;
 				case 0x1:
-					printf("%s (0x%02x) \t %02x", "LD SP,d16", currInstruc[0], currInstruc[2], currInstruc[1]);
+					printf("%s (0x%02x) \t %02x%02x", "LD SP,d16", currInstruc[0], currInstruc[2], currInstruc[1]);
 					*pc += 3;
 					break;
 				case 0x2:
@@ -471,7 +471,7 @@ void printInstruction(uint8_t *currInstruc, int *pc) {
 					*pc += 1;
 					break;
 				default:
-					printf("Unknown 0x3 (%02x)", *currInstruc);
+					printf("Unknown 0x5 (%02x)", *currInstruc);
 					*pc += 1;
 					break;
 			}
@@ -543,7 +543,7 @@ void printInstruction(uint8_t *currInstruc, int *pc) {
 					*pc += 1;
 					break;
 				default:
-					printf("Unknown 0x3 (%02x)", *currInstruc);
+					printf("Unknown 0x6 (%02x)", *currInstruc);
 					*pc += 1;
 					break;
 			}
@@ -551,71 +551,71 @@ void printInstruction(uint8_t *currInstruc, int *pc) {
 		case 0x7: 
 			switch (last4bits) {
 				case 0x0:
-				    printf("%s (0x%02x)", "", *currInstruc);
+				    printf("%s (0x%02x)", "LD (HL),B", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x1:
-				    printf("%s (0x%02x)", "", *currInstruc);
+				    printf("%s (0x%02x)", "LD (HL),C", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x2:
-				    printf("%s (0x%02x)", "", *currInstruc);
+				    printf("%s (0x%02x)", "LD (HL),D", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x3:
-				    printf("%s (0x%02x)", "", *currInstruc);
+				    printf("%s (0x%02x)", "LD (HL),E", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x4:
-				    printf("%s (0x%02x)", "", *currInstruc);
+				    printf("%s (0x%02x)", "LD (HL),H", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x5:
-				    printf("%s (0x%02x)", "", *currInstruc);
+				    printf("%s (0x%02x)", "LD (HL),L", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x6:
-				    printf("%s (0x%02x)", "", *currInstruc);
+				    printf("%s (0x%02x)", "HALT", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x7:
-				    printf("%s (0x%02x)", "", *currInstruc);
+				    printf("%s (0x%02x)", "LD (HL),A", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x8:
-				    printf("%s (0x%02x)", "", *currInstruc);
+				    printf("%s (0x%02x)", "LD A,B", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x9:
-				    printf("%s (0x%02x)", "", *currInstruc);
+				    printf("%s (0x%02x)", "LD A,C", *currInstruc);
 					*pc += 1;
 					break;
 				case 0xa:
-				    printf("%s (0x%02x)", "", *currInstruc);
+				    printf("%s (0x%02x)", "LD A,D", *currInstruc);
 					*pc += 1;
 					break;
 				case 0xb:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "LD A,E", *currInstruc);
 					*pc += 1;
 					break;
 				case 0xc:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "LD A,H", *currInstruc);
 					*pc += 1;
 					break;
 				case 0xd:
-				    printf("%s (0x%02x)", "", *currInstruc);
+				    printf("%s (0x%02x)", "LD A,L", *currInstruc);
 					*pc += 1;
 					break;
 				case 0xe:
-				    printf("%s (0x%02x)", "", *currInstruc);
+				    printf("%s (0x%02x)", "LD A,(HL)", *currInstruc);
 					*pc += 1;
 					break;
 				case 0xf:
-				    printf("%s (0x%02x)", "", *currInstruc);
+				    printf("%s (0x%02x)", "LD A,A", *currInstruc);
 					*pc += 1;
 					break;
 				default:
-					printf("Unknown 0x3 (%02x)", *currInstruc);
+					printf("Unknown 0x7 (%02x)", *currInstruc);
 					*pc += 1;
 					break;
 			}
@@ -623,71 +623,71 @@ void printInstruction(uint8_t *currInstruc, int *pc) {
 		case 0x8:
 			switch (last4bits) {
 				case 0x0:
-				    printf("%s (0x%02x)", "", *currInstruc);
+				    printf("%s (0x%02x)", "ADD A,B", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x1:
-				    printf("%s (0x%02x)", "", *currInstruc);
+				    printf("%s (0x%02x)", "ADD A,C", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x2:
-				    printf("%s (0x%02x)", "", *currInstruc);
+				    printf("%s (0x%02x)", "ADD A,D", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x3:
-				    printf("%s (0x%02x)", "", *currInstruc);
+				    printf("%s (0x%02x)", "ADD A,E", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x4:
-				    printf("%s (0x%02x)", "", *currInstruc);
+				    printf("%s (0x%02x)", "ADD A,H", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x5:
-				    printf("%s (0x%02x)", "", *currInstruc);
+				    printf("%s (0x%02x)", "ADD A,L", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x6:
-				    printf("%s (0x%02x)", "", *currInstruc);
+				    printf("%s (0x%02x)", "ADD A,(HL)", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x7:
-				    printf("%s (0x%02x)", "", *currInstruc);
+				    printf("%s (0x%02x)", "ADD A,A", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x8:
-				    printf("%s (0x%02x)", "", *currInstruc);
+				    printf("%s (0x%02x)", "ADC A,B", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x9:
-				    printf("%s (0x%02x)", "", *currInstruc);
+				    printf("%s (0x%02x)", "ADC A,C", *currInstruc);
 					*pc += 1;
 					break;
 				case 0xa:
-				    printf("%s (0x%02x)", "", *currInstruc);
+				    printf("%s (0x%02x)", "ADC A,D", *currInstruc);
 					*pc += 1;
 					break;
 				case 0xb:
-				    printf("%s (0x%02x)", "", *currInstruc);
+				    printf("%s (0x%02x)", "ADC A,E", *currInstruc);
 					*pc += 1;
 					break;
 				case 0xc:
-				    printf("%s (0x%02x)", "", *currInstruc);
+				    printf("%s (0x%02x)", "ADC A,H", *currInstruc);
 					*pc += 1;
 					break;
 				case 0xd:
-				    printf("%s (0x%02x)", "", *currInstruc);
+				    printf("%s (0x%02x)", "ADC A,L", *currInstruc);
 					*pc += 1;
 					break;
 				case 0xe:
-				    printf("%s (0x%02x)", "", *currInstruc);
+				    printf("%s (0x%02x)", "ADC A,(HL)", *currInstruc);
 					*pc += 1;
 					break;
 				case 0xf:
-				    printf("%s (0x%02x)", "", *currInstruc);
+				    printf("%s (0x%02x)", "ADC A,A", *currInstruc);
 					*pc += 1;
 					break;
 				default:
-					printf("Unknown 0x3 (%02x)", *currInstruc);
+					printf("Unknown 0x8 (%02x)", *currInstruc);
 					*pc += 1;
 					break;
 			}
@@ -695,71 +695,71 @@ void printInstruction(uint8_t *currInstruc, int *pc) {
 		case 0x9: 
 			switch (last4bits) {
 				case 0x0:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "SUB B", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x1:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "SUB C", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x2:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "SUB D", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x3:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "SUB E", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x4:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "SUB H", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x5:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "SUB L", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x6:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "SUB (HL)", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x7:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "SUB A", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x8:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "SBC A,B", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x9:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "SBC A,C", *currInstruc);
 					*pc += 1;
 					break;
 				case 0xa:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "SBC A,D", *currInstruc);
 					*pc += 1;
 					break;
 				case 0xb:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "SBC A,E", *currInstruc);
 					*pc += 1;
 					break;
 				case 0xc:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "SBC A,H", *currInstruc);
 					*pc += 1;
 					break;
 				case 0xd:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "SBC A,L", *currInstruc);
 					*pc += 1;
 					break;
 				case 0xe:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "SBC A,(HL)", *currInstruc);
 					*pc += 1;
 					break;
 				case 0xf:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "SBC A,A", *currInstruc);
 					*pc += 1;
 					break;
 				default:
-					printf("Unknown 0x3 (%02x)", *currInstruc);
+					printf("Unknown 0x9 (%02x)", *currInstruc);
 					*pc += 1;
 					break;
 			}
@@ -767,71 +767,71 @@ void printInstruction(uint8_t *currInstruc, int *pc) {
 		case 0xa: 
 			switch (last4bits) {
 				case 0x0:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "AND B", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x1:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "AND C", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x2:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "AND D", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x3:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "AND E", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x4:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "AND H", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x5:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "AND L", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x6:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "AND (HL)", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x7:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "AND A", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x8:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "XOR B", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x9:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "XOR C", *currInstruc);
 					*pc += 1;
 					break;
 				case 0xa:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "XOR D", *currInstruc);
 					*pc += 1;
 					break;
 				case 0xb:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "XOR E", *currInstruc);
 					*pc += 1;
 					break;
 				case 0xc:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "XOR H", *currInstruc);
 					*pc += 1;
 					break;
 				case 0xd:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "XOR L", *currInstruc);
 					*pc += 1;
 					break;
 				case 0xe:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "XOR (HL)", *currInstruc);
 					*pc += 1;
 					break;
 				case 0xf:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "XOR A", *currInstruc);
 					*pc += 1;
 					break;
 				default:
-					printf("Unknown 0x3 (%02x)", *currInstruc);
+					printf("Unknown 0xa (%02x)", *currInstruc);
 					*pc += 1;
 					break;
 			}
@@ -839,71 +839,71 @@ void printInstruction(uint8_t *currInstruc, int *pc) {
 		case 0xb: 
 			switch (last4bits) {
 				case 0x0:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "OR B", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x1:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "OR C", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x2:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "OR D", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x3:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "OR E", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x4:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "OR H", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x5:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "OR L", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x6:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "OR (HL)", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x7:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "OR A", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x8:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "CP B", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x9:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "CP C", *currInstruc);
 					*pc += 1;
 					break;
 				case 0xa:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "CP D", *currInstruc);
 					*pc += 1;
 					break;
 				case 0xb:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "CP E", *currInstruc);
 					*pc += 1;
 					break;
 				case 0xc:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "CP H", *currInstruc);
 					*pc += 1;
 					break;
 				case 0xd:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "CP L", *currInstruc);
 					*pc += 1;
 					break;
 				case 0xe:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "CP (HL)", *currInstruc);
 					*pc += 1;
 					break;
 				case 0xf:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "CP A", *currInstruc);
 					*pc += 1;
 					break;
 				default:
-					printf("Unknown 0x3 (%02x)", *currInstruc);
+					printf("Unknown 0xb (%02x)", *currInstruc);
 					*pc += 1;
 					break;
 			}
@@ -911,64 +911,68 @@ void printInstruction(uint8_t *currInstruc, int *pc) {
 		case 0xc:
 			switch (last4bits) {
 				case 0x0:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "RET NZ", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x1:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "POP BC", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x2:
-					printf("%s (0x%02x) \t %02x", "", currInstruc[0], currInstruc[2], currInstruc[1]);
+					printf("%s (0x%02x) \t %02x%02x", "JP NZ,a16", currInstruc[0], currInstruc[2], currInstruc[1]);
 					*pc += 3;
 					break;
 				case 0x3:
-					printf("%s (0x%02x) \t %02x", "", currInstruc[0], currInstruc[2], currInstruc[1]);
+					printf("%s (0x%02x) \t %02x%02x", "JP a16", currInstruc[0], currInstruc[2], currInstruc[1]);
 					*pc += 3;
 					break;
 				case 0x4:
-					printf("%s (0x%02x) \t %02x", "", currInstruc[0], currInstruc[2], currInstruc[1]);
+					printf("%s (0x%02x) \t %02x%02x", "CALL NZ,a16", currInstruc[0], currInstruc[2], currInstruc[1]);
 					*pc += 3;
 					break;
 				case 0x5:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "PUSH BC", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x6:
-					printf("%s (0x%02x) \t %02x", "", currInstruc[0], currInstruc[1]);
+					printf("%s (0x%02x) \t %02x", "ADD A,d8", currInstruc[0], currInstruc[1]);
 					*pc += 2;
 					break;
 				case 0x7:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "RST 00H", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x8:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "RET Z", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x9:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "RET", *currInstruc);
 					*pc += 1;
 					break;
 				case 0xa:
-					printf("%s (0x%02x) \t %02x", "", currInstruc[0], currInstruc[2], currInstruc[1]);
+					printf("%s (0x%02x) \t %02x%02x", "JP Z,a16", currInstruc[0], currInstruc[2], currInstruc[1]);
+					*pc += 3;
+					break;
+				case 0xb:
+					printf("%s (0x%02x) \t %02x%02x", "PREFIX CB", currInstruc[0], currInstruc[2], currInstruc[1]);
 					*pc += 3;
 					break;
 				case 0xc:
-					printf("%s (0x%02x) \t %02x", "", currInstruc[0], currInstruc[2], currInstruc[1]);
+					printf("%s (0x%02x) \t %02x%02x", "CALL Z,a16", currInstruc[0], currInstruc[2], currInstruc[1]);
 					*pc += 3;
 					break;
 				case 0xd:
-					printf("%s (0x%02x) \t %02x", "", currInstruc[0], currInstruc[2], currInstruc[1]);
+					printf("%s (0x%02x) \t %02x%02x", "CALL a16", currInstruc[0], currInstruc[2], currInstruc[1]);
 					*pc += 3;
 					break;
 				case 0xe:
-					printf("%s (0x%02x) \t %02x", "", currInstruc[0], currInstruc[1]);
-					*pc += 2;
+					printf("%s (0x%02x)", "ADC A,d8", *currInstruc);
+					*pc += 1;
 					break;
 				case 0xf:
-					printf("%s (0x%02x)", "", *currInstruc);
-					*pc += 1;
+					printf("%s (0x%02x) \t %02x%02x", "RST 08H", currInstruc[0], currInstruc[2], currInstruc[1]);
+					*pc += 3;
 					break;
 				default:
 					printf("Unknown 0x3 (%02x)", *currInstruc);
@@ -979,59 +983,59 @@ void printInstruction(uint8_t *currInstruc, int *pc) {
 		case 0xd: 
 			switch (last4bits) {
 				case 0x0:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "RET NC", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x1:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "POP DE", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x2:
-					printf("%s (0x%02x) \t %02x", "", currInstruc[0], currInstruc[2], currInstruc[1]);
+					printf("%s (0x%02x) \t %02x%02x", "JP NC,a16", currInstruc[0], currInstruc[2], currInstruc[1]);
 					*pc += 3;
 					break;
 				case 0x4:
-					printf("%s (0x%02x) \t %02x", "", currInstruc[0], currInstruc[2], currInstruc[1]);
+					printf("%s (0x%02x) \t %02x%02x", "CALL NC,a16", currInstruc[0], currInstruc[2], currInstruc[1]);
 					*pc += 3;
 					break;
 				case 0x5:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "PUSH DE", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x6:
-					printf("%s (0x%02x) \t %02x", "", currInstruc[0], currInstruc[1]);
+					printf("%s (0x%02x) \t %02x", "SUB d8", currInstruc[0], currInstruc[1]);
 					*pc += 2;
 					break;
 				case 0x7:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "RST 10H", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x8:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "RET C", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x9:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "RETI", *currInstruc);
 					*pc += 1;
 					break;
 				case 0xa:
-					printf("%s (0x%02x) \t %02x", "", currInstruc[0], currInstruc[2], currInstruc[1]);
+					printf("%s (0x%02x) \t %02x%02x", "JP C,a16", currInstruc[0], currInstruc[2], currInstruc[1]);
 					*pc += 3;
 					break;
 				case 0xc:
-					printf("%s (0x%02x) \t %02x", "", currInstruc[0], currInstruc[2], currInstruc[1]);
+					printf("%s (0x%02x) \t %02x%02x", "CALL C,a16", currInstruc[0], currInstruc[2], currInstruc[1]);
 					*pc += 3;
 					break;
 				case 0xe:
-					printf("%s (0x%02x) \t %02x", "", currInstruc[0], currInstruc[1]);
+					printf("%s (0x%02x) \t %02x", "SBC A,d8", currInstruc[0], currInstruc[1]);
 					*pc += 2;
 					break;
 				case 0xf:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "RST 18H", *currInstruc);
 					*pc += 1;
 					break;
 				default:
-					printf("Unknown 0x3 (%02x)", *currInstruc);
+					printf("Unknown 0xd (%02x)", *currInstruc);
 					*pc += 1;
 					break;
 			}
@@ -1039,51 +1043,51 @@ void printInstruction(uint8_t *currInstruc, int *pc) {
 		case 0xe: 
 			switch (last4bits) {
 				case 0x0:
-					printf("%s (0x%02x) \t %02x", "", currInstruc[0], currInstruc[1]);
+					printf("%s (0x%02x) \t %02x", "LDH (a8),A", currInstruc[0], currInstruc[1]);
 					*pc += 2;
 					break;
 				case 0x1:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "POP HL", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x2:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "LD (C),A", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x5:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "PUSH HL", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x6:
-					printf("%s (0x%02x) \t %02x", "", currInstruc[0], currInstruc[1]);
+					printf("%s (0x%02x) \t %02x", "AND d8", currInstruc[0], currInstruc[1]);
 					*pc += 2;
 					break;
 				case 0x7:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "RST 20H", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x8:
-					printf("%s (0x%02x) \t %02x", "", currInstruc[0], currInstruc[1]);
+					printf("%s (0x%02x) \t %02x", "ADD SP,r8", currInstruc[0], currInstruc[1]);
 					*pc += 2;
 					break;
 				case 0x9:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "JP (HL)", *currInstruc);
 					*pc += 1;
 					break;
 				case 0xa:
-					printf("%s (0x%02x) \t %02x", "", currInstruc[0], currInstruc[2], currInstruc[1]);
+					printf("%s (0x%02x) \t %02x%02x", "LD (a16),A", currInstruc[0], currInstruc[2], currInstruc[1]);
 					*pc += 3;
 					break;
 				case 0xe:
-					printf("%s (0x%02x) \t %02x", "", currInstruc[0], currInstruc[1]);
+					printf("%s (0x%02x) \t %02x", "XOR d8", currInstruc[0], currInstruc[1]);
 					*pc += 2;
 					break;
 				case 0xf:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "RST 28H", *currInstruc);
 					*pc += 1;
 					break;
 				default:
-					printf("Unknown 0x3 (%02x)", *currInstruc);
+					printf("Unknown 0xe (%02x)", *currInstruc);
 					*pc += 1;
 					break;
 			}
@@ -1091,59 +1095,59 @@ void printInstruction(uint8_t *currInstruc, int *pc) {
 		case 0xf:
 			switch (last4bits) {
 				case 0x0:
-					printf("%s (0x%02x) \t %02x", "", currInstruc[0], currInstruc[1]);
+					printf("%s (0x%02x) \t %02x", "LDH A,(a8)", currInstruc[0], currInstruc[1]);
 					*pc += 2;
 					break;
 				case 0x1:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "POP AF", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x2:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "LD A,(C)", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x3:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "DI", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x5:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "PUSH AF", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x6:
-					printf("%s (0x%02x) \t %02x", "", currInstruc[0], currInstruc[1]);
+					printf("%s (0x%02x) \t %02x", "OR d8", currInstruc[0], currInstruc[1]);
 					*pc += 2;
 					break;
 				case 0x7:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "RST 30H", *currInstruc);
 					*pc += 1;
 					break;
 				case 0x8:
-					printf("%s (0x%02x) \t %02x", "", currInstruc[0], currInstruc[1]);
+					printf("%s (0x%02x) \t %02x", "LD HL,SP+r8", currInstruc[0], currInstruc[1]);
 					*pc += 2;
 					break;
 				case 0x9:
-					printf("%s (0x%02x) \t %02x", "", currInstruc[0], currInstruc[1]);
+					printf("%s (0x%02x) \t %02x", "LD SP,HL", currInstruc[0], currInstruc[1]);
 					*pc += 2;
 					break;
 				case 0xa:
-					printf("%s (0x%02x) \t %02x", "", currInstruc[0], currInstruc[2], currInstruc[1]);
+					printf("%s (0x%02x) \t %02x%02x", "LD A,(a16)", currInstruc[0], currInstruc[2], currInstruc[1]);
 					*pc += 3;
 					break;
 				case 0xb:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "EI", *currInstruc);
 					*pc += 1;
 					break;
 				case 0xe:
-					printf("%s (0x%02x) \t %02x", "", currInstruc[0], currInstruc[1]);
+					printf("%s (0x%02x) \t %02x", "CP d8", currInstruc[0], currInstruc[1]);
 					*pc += 2;
 					break;
 				case 0xf:
-					printf("%s (0x%02x)", "", *currInstruc);
+					printf("%s (0x%02x)", "RST 38H", *currInstruc);
 					*pc += 1;
 					break;
 				default:
-					printf("Unknown 0x3 (%02x)", *currInstruc);
+					printf("Unknown 0xf (%02x)", *currInstruc);
 					*pc += 1;
 					break;
 			}
